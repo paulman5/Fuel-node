@@ -5,6 +5,9 @@ const run = async () => {
   const { provider } = launchedWithDefaultConfig
   const { name } = await provider.fetchChain()
   console.log("Chain Name:", name)
+
+  // Ensure cleanup
+  launchedWithDefaultConfig.cleanup()
 }
 
 run()
