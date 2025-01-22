@@ -1,7 +1,11 @@
 import { launchTestNode } from "@fuel-ts/contract/test-utils"
 
 const run = async () => {
-  const launchedWithDefaultConfig = await launchTestNode()
+  const launchedWithDefaultConfig = await launchTestNode({
+    nodeOptions: {
+      loggingEnabled: true,
+    },
+  })
   const { provider } = launchedWithDefaultConfig
   const { name } = await provider.fetchChain()
   console.log("Chain Name:", name)
